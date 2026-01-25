@@ -1,12 +1,17 @@
-import Karte from './components/Karte';
+import { Karte } from './components/Karte.jsx';
 
 function App() {
   return (
-    <div>
-      <h1>Wegbegleiter – Probelauf</h1>
-      
-      <Karte />
-      <p>Mein React-Projekt für P3 WS25/26</p>
+    
+    <div className="app-shell">
+
+        <div>
+          <h1>Wegbegleiter – Probelauf</h1>
+          
+          <Karte />
+          <p>Mein React-Projekt für P3 WS25/26</p>
+        </div>
+        
     </div>
   );
 }
