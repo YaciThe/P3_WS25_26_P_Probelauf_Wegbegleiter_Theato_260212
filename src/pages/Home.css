@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500;700&display=swap');
+
+.home-links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.home-links a {
+    font-size: 32px;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+
+
+h1 {
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 10%;
+    margin-bottom: 0;
+}
+
+.wegbegleiter {
+    position: absolute;
+    top: 45%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    height:auto;
+    width: 60%;
+}
+
+.home-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(2 * 80px + 23%);
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.arrow {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+}
+
+.arrow-left, .arrow-right {
+    height: 180%;
+    width: auto;
+}
+
+
+.map-button,
+.message-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #FFA500;
+    border: none;
+    text-decoration: none;
+    border-radius: 100%;
+}
+
+.map-button:active,
+.message-button:active {
+    background-color: #9C6500;
+}
+
+.map-button img,
+.message-button img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}

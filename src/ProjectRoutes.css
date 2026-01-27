@@ -1,0 +1,9 @@
+.app-shell {
+  width: 100%;
+  max-width: 810px;        /* iPad 2020 8. Gen Breite */
+  aspect-ratio: 3 / 4;     /* iPad Hochformat */
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+  padding: 5%;
+  position: relative;
+}
