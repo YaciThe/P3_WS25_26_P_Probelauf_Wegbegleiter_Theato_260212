@@ -3,12 +3,11 @@ import "./Home.css";
 import HomePicture from "../assets/HomePicture.png";
 import MapIcon from "../assets/MapIcon.png";
 import MessageIcon from "../assets/MessageIcon.png";
-import ArrowLeft from "../assets/ArrowLeft.png";
-import ArrowRight from "../assets/ArrowRight.png";
+
 
 export function Home() {
   return (
-    <>
+    <div className="home-content-padding">
       <h1>
         Hallo! Ich bin dein Wegbegleiter.
         <br />
@@ -23,7 +22,6 @@ export function Home() {
 
       <div className="home-buttons">
         <div className="button-wrapper">
-    
           <Link to="/karte" className="map-button">
             <img src={MapIcon} alt="Karte" />
           </Link>
@@ -39,6 +37,6 @@ export function Home() {
         <Link to="/notfallkontakte">Notfallkontakte</Link>
         <Link to="/hilfe">Hilfe</Link>
       </div>
-    </>
+    </div>
   );
 }
