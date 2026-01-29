@@ -1,3 +1,13 @@
+.backarrow {
+	align-self: flex-start;
+}
+
+.schachtlogo {
+	height: 7vh;
+	width: auto;
+
+}
+
 
 .karte-toggle-switch {
 	position: absolute;
@@ -62,8 +72,8 @@
 	height: 8%;
 	min-height: 40px;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
-	justify-content: flex-end;
 	padding: 0 2rem;
 	box-sizing: border-box;
 	background: #fff;
@@ -90,3 +100,5 @@
 	overflow: hidden;
 	box-shadow: 0 2px 12px rgba(0,0,0,0.12);
 }
+
+
