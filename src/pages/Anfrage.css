@@ -64,16 +64,25 @@
 
 
 
-.anfrage-content h2 {
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+.anfrage-content {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  border-radius: 18px;
+  background: #fff;
+  max-width: 95vw;
+  width: 100%;
 }
 
-.anfrage-content p {
-  text-align: center;
+@media (min-width: 600px) {
+  .anfrage-content {
+    max-width: 388px;
+    width: 58.32vw;
+  }
 }
-
 .headertitle {
   display: flex;
   justify-content: center;
@@ -100,7 +109,7 @@
   position: absolute;
   right: 24px;
   bottom: 24px;
-  width: 15vw;
+  width: 28vw;
   height: auto;
   z-index: 1000;
 }
