@@ -18,7 +18,7 @@ export default function Header(props) {
     <div className="header" style={gridStyle}>
       {/* Arrow links, immer sichtbar */}
       <div className="headerarrow">
-        <Link to="/">
+        <Link to={props.backTo || "/"}>
           <img src={BackArrow} alt="BackArrow" className="backarrow" />
         </Link>
       </div>

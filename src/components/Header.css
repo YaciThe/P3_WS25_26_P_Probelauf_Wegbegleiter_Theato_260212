@@ -1,3 +1,7 @@
+/* Header-Titel-Schriftgröße */
+.headertitle {
+	font-size: 32px !important;
+}
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
 
 

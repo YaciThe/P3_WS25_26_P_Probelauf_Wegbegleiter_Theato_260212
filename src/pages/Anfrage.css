@@ -1,19 +1,68 @@
+
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;700&display=swap');
+
+
+.neueanfrage-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+
+.anfrage-divider {
+  border: none;
+  border-top: 2px solid #111;
+  width: 100%;
+  margin: 5% 0;
+}
+
+.anfrage-divider-orange {
+  border: none;
+  border-top: 2.5px solid #FFA500;
+  width: 100%;
+  margin: 5% 0;
+}
+
+.anfrage-link {
+  display: block;
+  margin: 2% 0;
+  color: #222;
+  text-decoration: none;
+  font-size: 34px;
+}
+
+
 .anfrage-wrapper {
   height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.anfrage-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .anfrage-content {
-  flex: 1;
   padding: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  border: 2px solid #000;
+  border-radius: 18px;
+  background: #fff;
+  width: 20vw;
+  height: auto;
 }
+
+
 
 .anfrage-content h2 {
   text-align: center;
@@ -41,6 +90,17 @@
   position: relative;
   align-items: center !important;
 }
+
 .header {
   align-items: center !important;
+}
+
+
+.personwalking {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: 15vw;
+  height: auto;
+  z-index: 1000;
 }
