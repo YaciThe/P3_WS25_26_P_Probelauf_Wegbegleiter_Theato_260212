@@ -46,7 +46,7 @@ export function NeueAnfrage() {
           ? 'du bist jetzt online'
           : today}
       </div>
-      <div className="neueanfragecontent">
+      <div className="neueanfragecontent" style={{minHeight:0}}>
         {messages.map((msg, i) => (
           <div key={i} style={{display: 'flex', flexDirection: 'column', alignItems: msg.from === 'user' ? 'flex-end' : 'flex-start'}}>
             <div className={`chatmsg chatmsg-${msg.from}`}

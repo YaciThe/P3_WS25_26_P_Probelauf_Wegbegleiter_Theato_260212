@@ -1,42 +1,253 @@
-.hilfe-wrapper {
+html,
+body {
   height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.hilfe-wrapper {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .hilfe-content {
-  flex: 1;
+  position: relative;
   padding: 5%;
+}
+
+/* ===== DEINE FESTEN POSITIONEN (UNVERÄNDERT) ===== */
+
+.impressum {
+  position: absolute;
+  right: 5%;
+  bottom: -8vh;
+  background-color: #fff2d9;
+  padding: 3%;
+  border-radius: 50px;
+}
+
+.sprechblase-png-wrapper {
+  position: absolute;
+  left: 23vw;
+  bottom: 8vh;
+}
+
+.personthinking-hilfe {
+  position: fixed;
+  bottom: 18vh;
+  left: 22vw;
+  width: 18vw;
+  z-index: 10;
+}
+
+/* ===== LAYOUT ===== */
+
+.hilfe-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* ✅ neue rechte Spalte */
+.hilfe-rightcol {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  gap: 2rem; /* Abstand zwischen Detailbox und Mapbox */
+  width: clamp(320px, 46vw, 520px); /* gleiche Breite wie detailbox */
 }
 
-.hilfe-content h2 {
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
+/* ===== LINKE BOX ===== */
 
-.hilfe-content p {
-  text-align: center;
-}
+.hilfe-linkbox {
+  --divider-width: 70%;
+  --divider-thickness: 2px;
 
-.headertitle {
+  width: 320px;
+  flex: 0 0 320px;
+
+  border: 4px solid #000;
+  border-radius: 18px;
+  background: #fff;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-  font-family: 'IBM Plex Serif', serif;
+  flex-direction: column;
+  overflow: hidden;
 }
-.header {
+
+.hilfe-link {
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-size: 36px;
+  text-align: center;
+  padding: 1.6rem 1.2rem 1.2rem;
+  cursor: pointer;
   position: relative;
-  align-items: center !important;
+  background: transparent;
+}
+
+/* Divider links */
+.hilfe-divider {
+  border: none;
+  border-top: var(--divider-thickness) solid #111;
+  width: var(--divider-width);
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.hilfe-divider.is-hidden {
+  opacity: 0;
+}
+
+.hilfe-link.is-active {
+  background-color: #fff2d9;
+}
+
+.hilfe-link.is-active + .hilfe-divider {
+  opacity: 0;
+}
+
+/* Linien links */
+.hilfe-link.is-active::before,
+.hilfe-link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--divider-width);
+  border-top: var(--divider-thickness) solid #111;
+  pointer-events: none;
+}
+
+/* nur aktiv bis Rand */
+.hilfe-link.is-active::before,
+.hilfe-link.is-active::after {
+  width: 100%;
+}
+
+/* TOP nur unten */
+.hilfe-link--top.is-active::before { content: none; }
+.hilfe-link--top.is-active::after { bottom: 0; }
+
+/* MIDDLE oben+unten */
+.hilfe-link.is-active:not(.hilfe-link--top):not(.hilfe-link--bottom)::before { top: 0; }
+.hilfe-link.is-active:not(.hilfe-link--top):not(.hilfe-link--bottom)::after  { bottom: 0; }
+
+/* BOTTOM nur oben */
+.hilfe-link--bottom.is-active::after { content: none; }
+.hilfe-link--bottom.is-active::before { top: 0; }
+
+/* Rundungen */
+.hilfe-link--top.is-active { border-radius: 14px 14px 0 0; }
+.hilfe-link--bottom.is-active { border-radius: 0 0 14px 14px; }
+
+/* ===== RECHTE BOX ===== */
+
+.hilfe-detailbox {
+  --detail-divider-width: 70%;
+  --detail-divider-thickness: 2px;
+
+  width: 100%; /* wird von .hilfe-rightcol bestimmt */
+  border: 4px solid #000;
+  border-radius: 18px;
+  background: #fff;
+
+  padding: 0;
+  overflow: hidden;
+}
+
+.hilfe-detail {
+  width: 100%;
+  display: block;
+
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  margin: 0;
+
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-size: 30px;
+  text-align: center;
+
+  padding: 1.6rem 1.2rem 1.2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+/* iOS/WebKit: Textfarbe bei Buttons "hart" setzen */
+.hilfe-detail,
+.hilfe-detail:active,
+.hilfe-detail:focus,
+.hilfe-detail:focus-visible {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  text-decoration: none !important;
+}
+
+.hilfe-detail {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Divider rechts */
+.hilfe-detail-divider {
+  border: none;
+  border-top: var(--detail-divider-thickness) solid #111;
+  width: var(--detail-divider-width);
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.hilfe-detail-divider.is-hidden {
+  opacity: 0;
+}
+
+.hilfe-detail.is-active {
+  background-color: #fff2d9;
+}
+
+/* Linien rechts */
+.hilfe-detail.is-active::before,
+.hilfe-detail.is-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--detail-divider-width);
+  border-top: var(--detail-divider-thickness) solid #111;
+  pointer-events: none;
+}
+
+/* nur aktiv bis Rand */
+.hilfe-detail.is-active::before,
+.hilfe-detail.is-active::after {
+  width: 100%;
+}
+
+/* TOP nur unten */
+.hilfe-detail--top.is-active::before { content: none; }
+.hilfe-detail--top.is-active::after { bottom: 0; }
+
+/* MIDDLE oben+unten */
+.hilfe-detail.is-active:not(.hilfe-detail--top):not(.hilfe-detail--bottom)::before { top: 0; }
+.hilfe-detail.is-active:not(.hilfe-detail--top):not(.hilfe-detail--bottom)::after  { bottom: 0; }
+
+/* BOTTOM nur oben */
+.hilfe-detail--bottom.is-active::after { content: none; }
+.hilfe-detail--bottom.is-active::before { top: 0; }
+
+/* Rundungen rechts */
+.hilfe-detail--top.is-active { border-radius: 14px 14px 0 0; }
+.hilfe-detail--bottom.is-active { border-radius: 0 0 14px 14px; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 700px) {
+  .hilfe-row {
+    flex-direction: column;
+  }
+
+  .hilfe-linkbox,
+  .hilfe-rightcol {
+    width: 100%;
+  }
 }

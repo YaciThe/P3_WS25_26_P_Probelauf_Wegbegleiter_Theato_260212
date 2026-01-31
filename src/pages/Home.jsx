@@ -35,7 +35,7 @@ export function Home() {
 
       <div className="home-links">
         <Link to="/notfallkontakte">Notfallkontakte</Link>
-        <Link to="/hilfe">Hilfe</Link>
+        <Link to="/hilfe">Hilfe & Impressum</Link>
       </div>
     </div>
   );

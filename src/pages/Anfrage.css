@@ -49,20 +49,6 @@
   align-items: center;
 }
 
-.anfrage-content {
-  padding: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #000;
-  border-radius: 18px;
-  background: #fff;
-  width: 20vw;
-  height: auto;
-}
-
-
 
 .anfrage-content {
   padding: 5%;
@@ -73,14 +59,14 @@
   border: 2px solid #000;
   border-radius: 18px;
   background: #fff;
-  max-width: 95vw;
-  width: 100%;
+  max-width: 350px;
+  width: 90vw;
 }
 
 @media (min-width: 600px) {
   .anfrage-content {
-    max-width: 388px;
-    width: 58.32vw;
+    max-width: 350px;
+    width: 40vw;
   }
 }
 .headertitle {
@@ -109,7 +95,14 @@
   position: absolute;
   right: 24px;
   bottom: 24px;
-  width: 28vw;
+  width: 35vw;
   height: auto;
   z-index: 1000;
+}
+
+@media (min-width: 900px) {
+  .personwalking {
+    width: 20vw;
+    max-width: 300px;
+  }
 }
