@@ -1,9 +1,39 @@
+.impressum h1 {
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
 html,
 body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
 }
+
+
+.hilfe-mapvorschau-box {
+  width: 100%;
+  margin-top: 2rem;
+  background: #fff;
+  border: 4px solid #000;
+  border-radius: 18px;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.hilfe-mapsteps {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 24px;
+}
+
+.hilfe-maptext {
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  color: #000000;
+  font-size: 24px;
+}
+
 
 .hilfe-wrapper {
   min-height: 100vh;
@@ -18,28 +48,66 @@ body {
 
 /* ===== DEINE FESTEN POSITIONEN (UNVERÄNDERT) ===== */
 
+
 .impressum {
   position: absolute;
   right: 5%;
-  bottom: -8vh;
+  bottom: -18vh;
   background-color: #fff2d9;
-  padding: 3%;
+  padding: 5%;
   border-radius: 50px;
+  text-align: center;
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+.impressum h1 {
+  font-size: 32px;
+}
+
+@media (max-width: 900px) {
+  .impressum {
+    position: absolute;
+    right: 5%;
+    width: 35vw;
+    bottom: -20vh;
+    text-align: center;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    padding: 5%;
+  }
 }
 
 .sprechblase-png-wrapper {
   position: absolute;
-  left: 23vw;
-  bottom: 8vh;
+  left: 25vw;
+  bottom: 0vh;
+}
+
+@media (max-width: 900px) {
+  .sprechblase-png-wrapper {
+    position: absolute;
+    left: 35vw;
+    width: 35vw;
+    bottom: 0vh;
+  }
 }
 
 .personthinking-hilfe {
   position: fixed;
-  bottom: 18vh;
-  left: 22vw;
-  width: 18vw;
+  bottom: 20vh;
+  left: 20vw;
+  width: 22vw;
   z-index: 10;
 }
+
+@media (max-width: 900px) {
+  .personthinking-hilfe {
+    left: 5vw;
+    width: 35vw;
+    bottom: 2vh;
+  }
+}
+
 
 /* ===== LAYOUT ===== */
 

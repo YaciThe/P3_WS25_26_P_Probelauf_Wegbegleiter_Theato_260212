@@ -27,16 +27,16 @@ const DATA = {
 
 /* 👉 Text für die Mapvorschau pro Eintrag */
 const MAP_TEXT = {
-  'Kirche xy': 'Hier kannst du nach Nahrung oder einem Schlafplatz fragen.',
-  'freiwillige Feuerwehr xy': 'Hier kannst du nach Nahrung oder einem Schlafplatz fragen.',
-  'Gesellenunterkunft xy': 'Hier kannst du nach Nahrung oder einem Schlafplatz fragen.',
+  'Kirche xy': 'Hier kannst du nach Nahrung oder einem Schlafplatz fragen:',
+  'freiwillige Feuerwehr xy': 'Hier kannst du nach Nahrung oder einem Schlafplatz fragen:',
+  'Gesellenunterkunft xy': 'Hier kannst du nach Nahrung oder einem Schlafplatz fragen:',
   'Kolpinghaus xy': 'Hier kannst du nach Nahrung oder einem Schlafplatz fragen.',
-  'Arbeitgeber 1': 'Hier kannst du nach Arbeit fragen.',
-  'Arbeitgeber 2': 'Hier kannst du nach Arbeit fragen.',
-  'Arbeitgeber 3': 'Hier kannst du nach Arbeit fragen.',
-  'Charly knoten': 'Hier lernst du einen einfachen und nützlichen Knoten.',
-  'Schlafplatz richten': 'Tipps zum sicheren und ruhigen Schlafen.',
-  'Trampen': 'Hinweise zum sicheren Trampen.',
+  'Arbeitgeber 1': 'Hier kannst du nach Arbeit fragen:',
+  'Arbeitgeber 2': 'Hier kannst du nach Arbeit fragen:',
+  'Arbeitgeber 3': 'Hier kannst du nach Arbeit fragen:',
+  'Charly knoten': 'Hier eine Anleitung, wie man den Charlottenburger knotet:',
+  'Schlafplatz richten': 'Tipps zum sicheren und ruhigen Schlafen:',
+  'Trampen': 'Hinweise zum sicheren Trampen:',
 };
 
 export function Hilfe() {
@@ -139,19 +139,19 @@ export function Hilfe() {
               </div>
 
               {/* 👉 MAPVORSCHAU oder Schritte */}
-              {['Charly knoten', 'Schlafplatz richten', 'Trampen'].includes(activeItem) ? (
-                <div style={{width: '100%', marginTop: '2rem', background: '#fff', border: '4px solid #000', borderRadius: 18, padding: '1.5rem 2rem', boxSizing: 'border-box', textAlign: 'left'}}>
-                  <p style={{fontWeight: 600, marginBottom: '1rem'}}>{MAP_TEXT[activeItem] ?? 'Weitere Informationen folgen.'}</p>
-                  <ul style={{margin: 0, paddingLeft: '1.2em'}}>
+              {['Charly knoten', 'Schlafplatz richten', 'Trampen'].includes(activeItem) && MAP_TEXT[activeItem] ? (
+                <div className="hilfe-mapvorschau-box">
+                  <p className="hilfe-maptext">{MAP_TEXT[activeItem]}</p>
+                  <ul className="hilfe-mapsteps">
                     <li>Schritt 1</li>
                     <li>Schritt 2</li>
                     <li>Schritt 3</li>
                   </ul>
                 </div>
               ) : (
-                activeItem && (
+                activeItem && MAP_TEXT[activeItem] && (
                   <HilfeMapvorschau
-                    text={MAP_TEXT[activeItem] ?? 'Weitere Informationen folgen.'}
+                    text={MAP_TEXT[activeItem]}
                   />
                 )
               )}

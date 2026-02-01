@@ -1,6 +1,6 @@
 .map-preview-box {
   width: 85%;
-  margin: 0 auto 0 auto;
+  margin: 5% auto;
 }
 .hilfe-mapvorschau {
   width: 100%;
@@ -11,6 +11,8 @@
   text-align: center;
   box-sizing: border-box;
   margin-top: 2rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 24px;
 }
 
 .hilfe-mapvorschau-map {
@@ -25,3 +27,4 @@
   color: #888;
   font-size: 1.1rem;
 }
+
